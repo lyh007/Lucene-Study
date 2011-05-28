@@ -1,0 +1,12 @@
+﻿# commit – Ignore by git
+#*.a       # Ignore all. a the end of the file
+#!lib.a    # However, except lib.a
+#/TODO     # Just ignore the root directory of the project TODO file, not including the subdir / TODO
+#build/    # Ignore the build / directory, all files
+#doc/*.txt # Ignores doc / notes.txt but does not include doc / server / arch.txt
+#The following is the generated files are ignored Intellij IDEA
+*.iml
+*.iws
+*.ipr
+projectFilesBackup/
+target/

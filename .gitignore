@@ -10,3 +10,4 @@
 *.ipr
 projectFilesBackup/
 target/
+.idea/

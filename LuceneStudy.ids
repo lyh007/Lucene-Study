@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Data Source" product="Oracle" version="Oracle Database 11g Release 11.1.0.0.0 - Production" jdbc-version="10.1" driver-version="10.1.0.5.0" uuid="e76e2cb1-0c9f-4815-8226-d8999bbf9c06">
+    <extra-name-characters>$#</extra-name-characters>
+    <identifier-quote-string>"</identifier-quote-string>
+    <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+    <jdbc-url>jdbc:oracle:thin:itsm/itsm2011@192.168.0.97:1521:orcl</jdbc-url>
+    <user-name>itsm</user-name>
+    <user-password>dfc3dfdedfd9dfc7df98df9adf9bdf9b</user-password>
+    <default-dialect>Oracle</default-dialect>
+    <libraries>
+      <library>
+        <url>file://$PROJECT_DIR$/../../../lib/oracle/ojdbc14.jar</url>
+      </library>
+    </libraries>
+  </data-source>
+</component>

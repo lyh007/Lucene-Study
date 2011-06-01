@@ -108,7 +108,7 @@ public class Search {
                     hits++;
                 }
                 //将文件名和匹配次数加入HashMap
-                rs.put(files[i].getName(), new Integer(hits));
+                rs.put(files[i].getName(), Integer.valueOf(hits));
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -5,10 +5,7 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.Term;
-import org.apache.lucene.search.Hits;
-import org.apache.lucene.search.IndexSearcher;
-import org.apache.lucene.search.Sort;
-import org.apache.lucene.search.TermQuery;
+import org.apache.lucene.search.*;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.SimpleFSDirectory;
 
@@ -19,7 +16,7 @@ import java.io.File;
  * @version Revision: 1.00 Date: 11-6-1下午4:18
  * @Email liuyuhui007@gmail.com
  */
-public class Ch505 {
+public class Ch506 {
     //索引存储路径
     public final static String INDEX_STORE_PATH = "D:\\appserver\\workspace\\ideaworkspace\\LuceneStudy\\src\\main\\resources\\indexFileStore";
 
@@ -100,10 +97,13 @@ public class Ch505 {
         IndexSearcher searcher = new IndexSearcher(searchDirectory, true);
         TermQuery q = new TermQuery(new Term("bookname", "女"));
 
-        //使用Sort。RELEVANCE来指定排序的法则    按文档的得分进行排序
-        // Hits hits = searcher.search(q, Sort.RELEVANCE);
-        //按文档的内部ID号来进行排序
-        Hits hits = searcher.search(q, Sort.INDEXORDER);
+        //定义一个Sort对象
+        Sort sort = new Sort();
+        //定义一个SortField对象
+        SortField f = new SortField("booknumber", SortField.INT, false);
+        sort.setSort(f);
+
+        Hits hits = searcher.search(q, sort);
         for (int i = 0; i < hits.length(); i++) {
             Document doc = hits.doc(i);
             System.out.print("书名:");
